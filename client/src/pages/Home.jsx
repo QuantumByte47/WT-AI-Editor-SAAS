@@ -1,15 +1,17 @@
-import AiTools from "../components/AiTools"
-import Hero from "../components/Hero"
-import Navbar from "../components/Navbar"
+import AiTools from "../components/AiTools";
+import Hero from "../components/Hero";
+import Navbar from "../components/Navbar";
+import Testimonial from "../components/Testimonial";
 
 const Home = () => {
   return (
     <>
-      <Navbar/>
-      <Hero/>
-      <AiTools/>
+      <Navbar />
+      <Hero />
+      <AiTools />
+      <Testimonial />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
