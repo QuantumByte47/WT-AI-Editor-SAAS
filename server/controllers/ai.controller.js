@@ -136,3 +136,64 @@ export const generateImage = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
+
+export const removeImageBackground = async (req, res) => {
+  try {
+    const { userId } = req.auth();
+    const { image } = req.file;
+    const plan = req.plan;
+
+    if (plan !== "premium") {
+      return res.status(429).json({
+        success: false,
+        message: "This feature is only available for premium subscriptions.",
+      });
+    }
+
+    const { secure_url } = await cloudinary.uploader.upload(image.path, {
+      transformation: [
+        {
+          effect: "background_removal",
+          background_removal: "remove_the_background",
+        },
+      ],
+    });
+
+    await sql` INSERT INTO creations (user_id, prompt, content, type)
+    VALUES (${userId}, 'Remove background from image', ${secure_url}, 'image')`;
+
+    res.status(200).json({ success: true, secure_url });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+export const removeImageObject = async (req, res) => {
+  try {
+    const { userId } = req.auth();
+    const { object } = req.body;
+    const { image } = req.file;
+    const plan = req.plan;
+
+    if (plan !== "premium") {
+      return res.status(429).json({
+        success: false,
+        message: "This feature is only available for premium subscriptions.",
+      });
+    }
+
+    const { public_id } = await cloudinary.uploader.upload(image.path);
+
+    const imageUrl = cloudinary.url(public_id, {
+      transformation: [{ effect: `gen_remove:${object}` }],
+      resource_type: "image",
+    });
+
+    await sql` INSERT INTO creations (user_id, prompt, content, type)
+    VALUES (${userId}, ${`Removed ${object} from image`}, ${imageUrl}, 'image')`;
+
+    res.status(200).json({ success: true, content: imageUrl });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
