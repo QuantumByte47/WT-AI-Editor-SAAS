@@ -1,9 +1,13 @@
-# 🚀 NovaCraft AI – All-in-One AI Tools Platform
+# 🚀 NovaCraft AI – All-in-One AI Tools Platform [**🔗Live Link**](https://nova-craft-ai.vercel.app)
 
 NovaCraft AI is a powerful SaaS platform that offers a suite of AI tools to help users create, enhance, and optimize content.  
 Whether you're a writer, designer, job-seeker, or developer — NovaCraft AI empowers you with cutting-edge AI features.
 
-🔗 **Live App**: [https://nova-craft-ai.vercel.app](https://nova-craft-ai.vercel.app)
+## 📸 Screenshots
+
+| ![Screenshot 1](https://github.com/user-attachments/assets/d654c7ee-87c0-40c6-85ad-3ace30479d17) | ![Screenshot 2](https://github.com/user-attachments/assets/af79ea52-5d8c-4ec7-aa3c-623d8b0e90e7) |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| ![Screenshot 4](https://github.com/user-attachments/assets/aad58430-aed0-436b-89fb-37477b23b768) | ![Screenshot 3](https://github.com/user-attachments/assets/257bcccb-4786-4a59-809f-9a0348f74338) |
 
 ---
 
@@ -168,15 +172,6 @@ We welcome contributions! Follow these steps:
    ```
 
 6. **Create a Pull Request** to the `main` branch
-
----
-
-## 📸 Screenshots
-
-| ![Screenshot 1]() | ![Screenshot 2]() |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| ![Screenshot 4]() | ![Screenshot 3]() |
-
 ---
 
 ## 📝 License
