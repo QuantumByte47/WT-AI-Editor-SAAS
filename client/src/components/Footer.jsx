@@ -1,11 +1,17 @@
-import { assets } from "../assets/assets";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
   return (
     <footer className="px-6 md:px-16 lg:px-24 xl:px-32 pt-8 w-full text-gray-500 mt-20">
       <div className="flex flex-col md:flex-row justify-between w-full gap-10 border-b border-gray-500/30 pb-6">
         <div className="md:max-w-96">
-          <img className="h-9" src={assets.logo} alt="logo" />
+          <h1
+            className="text-xl sm:text-2xl font-bold cursor-pointer text-primary"
+            onClick={() => navigate("/")}
+          >
+            NovaCraft-AI
+          </h1>{" "}
           <p className="mt-6 text-sm">
             Experience the power of AI with NovaCraft AI. <br />
             Transform your content creation with our suite of premium AI tools.
