@@ -5,9 +5,9 @@ Whether you're a writer, designer, job-seeker, or developer — NovaCraft AI emp
 
 ## 📸 Screenshots
 
-| ![Screenshot 1](https://github.com/user-attachments/assets/d654c7ee-87c0-40c6-85ad-3ace30479d17) | ![Screenshot 2](https://github.com/user-attachments/assets/af79ea52-5d8c-4ec7-aa3c-623d8b0e90e7) |
+| ![Screenshot 1](https://github.com/user-attachments/assets/d654c7ee-87c0-40c6-85ad-3ace30479d17) | ![Screenshot 2](https://github.com/user-attachments/assets/4eb71566-a938-49e0-bc5c-cfc190fddbe4) |
 | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| ![Screenshot 4](https://github.com/user-attachments/assets/aad58430-aed0-436b-89fb-37477b23b768) | ![Screenshot 3](https://github.com/user-attachments/assets/257bcccb-4786-4a59-809f-9a0348f74338) |
+| ![Screenshot 4](https://github.com/user-attachments/assets/c5c3335d-022b-4de0-b033-b94cffe71efa) | ![Screenshot 3](https://github.com/user-attachments/assets/0e6499fa-6bcc-41b8-b7e9-4aab8f3fd3f0) |
 
 ---
 
