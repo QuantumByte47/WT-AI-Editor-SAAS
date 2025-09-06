@@ -1,196 +1,244 @@
-# 🚀 NovaCraft AI – All-in-One AI Tools Platform [**🔗Live Link**](https://nova-craft-ai.vercel.app)
+# 🚀 WT AI Editor – Advanced AI-Powered Content Platform
 
-NovaCraft AI is a powerful SaaS platform that offers a suite of AI tools to help users create, enhance, and optimize content.  
-Whether you're a writer, designer, job-seeker, or developer — NovaCraft AI empowers you with cutting-edge AI features.
+WT AI Editor is a comprehensive SaaS platform that leverages cutting-edge artificial intelligence to help users create, enhance, and optimize content. Built for content creators, designers, writers, and professionals who need powerful AI tools for their daily workflow.
 
-## 📸 Screenshots
+## ✨ Core Features
 
-| ![Screenshot 1](https://github.com/user-attachments/assets/d654c7ee-87c0-40c6-85ad-3ace30479d17) | ![Screenshot 2](https://github.com/user-attachments/assets/4eb71566-a938-49e0-bc5c-cfc190fddbe4) |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| ![Screenshot 4](https://github.com/user-attachments/assets/c5c3335d-022b-4de0-b033-b94cffe71efa) | ![Screenshot 3](https://github.com/user-attachments/assets/0e6499fa-6bcc-41b8-b7e9-4aab8f3fd3f0) |
-
----
-
-## ✨ Features
-
-- ✍️ **AI Article Writer** – Generate engaging, high-quality articles on any topic
-- 📰 **Blog Title Generator** – Find catchy blog titles with our AI-powered tool
-- 🎨 **AI Image Generation** – Generate stunning images from prompts using Gemini
-- 🖼️ **Background Removal** – Remove backgrounds from images effortlessly
-- 🧽 **Object Removal** – Delete unwanted objects from photos with AI
-- 📄 **Resume Reviewer** – Improve your resume with instant AI feedback
+- ✍️ **AI Article Writer** – Generate high-quality, engaging articles on any topic with advanced AI
+- 📰 **Blog Title Generator** – Create compelling, click-worthy blog titles that drive engagement
+- 🎨 **AI Image Generation** – Generate stunning visuals from text descriptions using Gemini AI
+- 🖼️ **Smart Background Removal** – Remove image backgrounds with precision AI technology
+- ✂️ **Intelligent Object Removal** – Seamlessly remove unwanted objects from photos
+- 📄 **Resume Reviewer** – Get AI-powered feedback to optimize your resume for better results
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Technology Stack
 
-| Layer       | Tech Used                                |
-| ----------- | ---------------------------------------- |
-| Frontend    | React 19, Vite, Tailwind CSS, Clerk Auth |
-| Backend     | Express.js (v5), OpenAI, Gemini API      |
-| Database    | Neon (PostgreSQL, serverless)            |
-| Image Tools | Cloudinary, ClipDrop API, Multer         |
-| Auth        | Clerk (JWT, OAuth)                       |
-| Hosting     | Vercel (frontend), Render (backend)      |
+| **Layer** | **Technologies** |
+|-----------|------------------|
+| **Frontend** | React 19, Vite, Tailwind CSS, Modern UI Components |
+| **Backend** | Express.js v5, Node.js, RESTful APIs |
+| **AI Integration** | Google Gemini API, Advanced Natural Language Processing |
+| **Database** | Neon PostgreSQL (Serverless) |
+| **Authentication** | Clerk (JWT, OAuth, Multi-provider) |
+| **Image Processing** | Cloudinary, ClipDrop API, Multer |
+| **Deployment** | Optimized for Vercel, Render, AWS |
 
 ---
 
-## 📁 Project Structure
+## 📁 Project Architecture
 
 ```
-
-nova-craft-ai/
-├── client/                # Frontend (React + Vite)
-│   ├── public/
-│   └── src/
-├── server/                # Backend (Express API, OpenAI, Cloudinary)
-|   ├── config/
-│   ├── controllers/
-|   ├── middlewares/
-│   ├── routes/
-|   ├── .env
-│   └── server.js
-└── README.md
-
+wt-ai-editor/
+├── client/                    # Frontend Application
+│   ├── public/               # Static assets
+│   ├── src/
+│   │   ├── components/       # Reusable UI components
+│   │   ├── pages/           # Application pages
+│   │   ├── assets/          # Images, icons, fonts
+│   │   ├── utils/           # Helper functions
+│   │   └── main.jsx         # Application entry point
+│   ├── package.json         # Frontend dependencies
+│   └── vite.config.js       # Vite configuration
+│
+├── server/                   # Backend Application
+│   ├── config/              # Configuration files
+│   │   ├── db.js           # Database connection
+│   │   ├── cloudinary.js   # Image storage config
+│   │   └── multer.js       # File upload config
+│   ├── controllers/         # Business logic handlers
+│   │   ├── ai.controller.js # AI operations
+│   │   └── user.controller.js # User management
+│   ├── middlewares/         # Custom middleware
+│   │   └── auth.js         # Authentication middleware
+│   ├── routes/              # API route definitions
+│   │   ├── ai.route.js     # AI endpoints
+│   │   └── user.route.js   # User endpoints
+│   ├── .env                 # Environment variables
+│   ├── package.json         # Backend dependencies
+│   └── server.js           # Server entry point
+│
+└── README.md               # Project documentation
 ```
 
 ---
 
-## ⚙️ Environment Variables
+## ⚙️ Environment Configuration
 
-Create `.env` files in both frontend (`client`) and backend (`server`) directories with the following variables:
+### Frontend Environment (`client/.env`)
 
-### 📦 Frontend (`client/.env`)
+```bash
+# Clerk Authentication
+VITE_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key_here
 
-```env
-VITE_CLERK_PUBLISHABLE_KEY=<your-clerk-publishable-key>
-
+# API Configuration
 VITE_BASE_URL=http://localhost:3000
 ```
 
-### 🧠 Backend (`server/.env`)
+### Backend Environment (`server/.env`)
 
-```env
-DATABASE_URL=<your-neon-database-url>
+```bash
+# Database Configuration
+DATABASE_URL=your_neon_postgresql_connection_string
 
-CLERK_PUBLISHABLE_KEY=<your-clerk-publishable-key>
-CLERK_SECRET_KEY=<your-clerk-secret-key>
+# Authentication (Clerk)
+CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+CLERK_SECRET_KEY=your_clerk_secret_key
 
-GEMINI_API_KEY=<your-google-gemini-api-key>
-CLIPDROP_API_KEY=<your-clipdrop-api-key>
+# AI Services
+GEMINI_API_KEY=your_google_gemini_api_key
+CLIPDROP_API_KEY=your_clipdrop_api_key
 
-CLOUDINARY_CLOUD_NAME=<your-cloudinary-cloud-name>
-CLOUDINARY_API_KEY=<your-cloudinary-api-key>
-CLOUDINARY_API_SECRET=<your-cloudinary-api-secret>
+# Image Storage (Cloudinary)
+CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
+CLOUDINARY_API_KEY=your_cloudinary_api_key
+CLOUDINARY_API_SECRET=your_cloudinary_api_secret
+
+# Server Configuration
+PORT=3000
 ```
 
-> ⚠️ **Never commit `.env` files or secrets to GitHub!**
+> **⚠️ Security Notice:** Never commit `.env` files to version control. Add `.env` to your `.gitignore` file.
 
 ---
 
-## 🧪 Getting Started (Local Setup)
+## 🚀 Development Environment Setup
 
-### 1. Clone the Repository
+### Prerequisites
+
+- **Node.js** v18 or higher
+- **npm** or **yarn** package manager
+- **Git** for version control
+
+### Step 1: Clone & Navigate
 
 ```bash
-git clone https://github.com/Varunyadavgithub/NovaCraft-AI.git
-cd nova-craft-ai
+git clone https://github.com/your-username/wt-ai-editor.git
+cd wt-ai-editor
 ```
 
-### 2. Install Dependencies
+### Step 2: Install Dependencies
 
-#### 📦 Frontend
-
+**Frontend Dependencies:**
 ```bash
 cd client
 npm install
 ```
 
-#### 🧠 Backend
-
+**Backend Dependencies:**
 ```bash
 cd ../server
 npm install
 ```
 
-### 3. Set Up Environment Variables
+### Step 3: Environment Setup
 
-Create `.env` files as shown above in both folders.
+1. **Create Environment Files:**
+   - Copy `.env.example` to `.env` in both `client/` and `server/` directories
+   - Fill in your API keys and configuration values
 
-### 4. Run the App
+2. **Required API Keys:**
+   - **Clerk Account**: [clerk.com](https://clerk.com) - For authentication
+   - **Google Gemini API**: [ai.google.dev](https://ai.google.dev) - For AI text generation
+   - **Neon Database**: [neon.tech](https://neon.tech) - For PostgreSQL database
+   - **Cloudinary**: [cloudinary.com](https://cloudinary.com) - For image storage
+   - **ClipDrop API**: [clipdrop.co](https://clipdrop.co) - For image processing
 
-#### ➤ Start Backend
+### Step 4: Database Setup
 
+1. **Create Neon Database:**
+   - Sign up at [neon.tech](https://neon.tech)
+   - Create a new project
+   - Copy the connection string to `DATABASE_URL`
+
+2. **Initialize Database Schema:**
+   ```sql
+   CREATE TABLE creations (
+     id SERIAL PRIMARY KEY,
+     user_id VARCHAR(255) NOT NULL,
+     prompt TEXT NOT NULL,
+     content TEXT NOT NULL,
+     type VARCHAR(50) NOT NULL,
+     likes TEXT[] DEFAULT '{}',
+     publish BOOLEAN DEFAULT FALSE,
+     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+   );
+   ```
+
+### Step 5: Launch Development Servers
+
+**Start Backend Server:**
 ```bash
 cd server
 npm run dev
 ```
+*Backend will run on `http://localhost:3000`*
 
-#### ➤ Start Frontend
-
+**Start Frontend Server:**
 ```bash
-cd ../client
+cd client
 npm run dev
 ```
+*Frontend will run on `http://localhost:5173`*
 
-Visit `http://localhost:5173` to view the app.
+### Step 6: Verify Setup
 
----
-
-## 🧑‍💻 Contribution Guide
-
-We welcome contributions! Follow these steps:
-
-### 🛠 Recommended Stack
-
-- Node.js v18+
-- PostgreSQL (Neon)
-- Vite
-- Clerk account (for authentication)
-- Cloudinary & Gemini API keys
-
-### 🪄 How to Contribute
-
-1. **Fork** the repository
-2. **Create a branch**
-
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-
-3. **Make your changes**
-4. **Commit** your changes
-
-   ```bash
-   git commit -m "✨ Added feature XYZ"
-   ```
-
-5. **Push** to your fork
-
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-
-6. **Create a Pull Request** to the `main` branch
----
-
-## 📝 License
-
-This project is licensed under the **MIT License**.
+- Navigate to `http://localhost:5173`
+- Test user authentication
+- Try generating an AI article
+- Verify all features are working correctly
 
 ---
 
-## 🙋‍♂️ Author
+## 🔧 Available Scripts
 
-Made with ❤️ by [Varun Yadav](https://www.linkedin.com/in/thecyberdevvarun/)
-
-- GitHub: [@varunyadavgithub](https://github.com/varunyadavgithub)
-- Portfolio: [thecyberdevvarun.vercel.app](https://thecyberdevvarun.vercel.app/)
-
----
-
-## ⭐️ Star This Project
-
+### Frontend (`client/`)
+```bash
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run preview      # Preview production build
+npm run lint         # Run ESLint
 ```
-If you found this helpful or inspiring, please give the repo a ⭐️ to support it!
+
+### Backend (`server/`)
+```bash
+npm run dev          # Start development server with nodemon
+npm start            # Start production server
 ```
+
+---
+
+## 📊 API Endpoints
+
+### AI Operations
+- `POST /api/v1/ai/generate-article` - Generate AI articles
+- `POST /api/v1/ai/generate-blog-title` - Create blog titles
+- `POST /api/v1/ai/generate-image` - Generate AI images
+- `POST /api/v1/ai/remove-background` - Remove image backgrounds
+- `POST /api/v1/ai/remove-object` - Remove objects from images
+- `POST /api/v1/ai/review-resume` - Analyze and review resumes
+
+### User Management
+- `GET /api/v1/user/creations` - Get user's creations
+- `GET /api/v1/user/community` - Get published creations
+- `POST /api/v1/user/like` - Like/unlike creations
+
+---
+
+## 🔐 Authentication & Security
+
+- **Multi-provider Authentication** via Clerk (Google, GitHub, Email)
+- **JWT Token-based** API authentication
+- **Rate Limiting** for API endpoints
+- **Input Validation** and sanitization
+- **Environment Variable** security
+- **CORS Configuration** for cross-origin requests
+
+---
+
+## 🤝 Support & Contributing
+
+For issues, feature requests, or contributions, please open an issue or submit a pull request.
+
+**Built with modern technologies and AI innovation.**
