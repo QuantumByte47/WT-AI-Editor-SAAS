@@ -6,9 +6,9 @@ export const getUserCreations = async (req, res) => {
 
         const creations = await sql`SELECT * FROM creations WHERE user_id=${userId} ORDER BY created_at DESC`
 
-        res.status(200).josn({ success: true, creations })
+        res.status(200).json({ success: true, creations })
     } catch (error) {
-        res.status(500).josn({ success: false, message: error.message });
+        res.status(500).json({ success: false, message: error.message });
     }
 }
 
@@ -16,9 +16,9 @@ export const getPublishedCreations = async (req, res) => {
     try {
         const creations = await sql`SELECT * FROM creations WHERE publish=true ORDER BY created_at DESC`
 
-        res.status(200).josn({ success: true, creations })
+        res.status(200).json({ success: true, creations })
     } catch (error) {
-        res.status(500).josn({ success: false, message: error.message });
+        res.status(500).json({ success: false, message: error.message });
     }
 }
 
@@ -30,7 +30,7 @@ export const toggleLikeCreation = async (req, res) => {
         const [creation] = await sql`SELECT * FROM creations WHERE id=${id}`
 
         if (!creation) {
-            res.status(404).josn({ success: false, message: "Creation not found" })
+            return res.status(404).json({ success: false, message: "Creation not found" })
         }
 
         const currentLikes = creation.likes;
@@ -50,8 +50,8 @@ export const toggleLikeCreation = async (req, res) => {
 
         await sql`UPDATE creations SET likes=${formattedArray}::text[] WHERE id=${id}`;
 
-        res.status(200).josn({ success: true, message })
+        res.status(200).json({ success: true, message })
     } catch (error) {
-        res.status(500).josn({ success: false, message: error.message });
+        res.status(500).json({ success: false, message: error.message });
     }
 }

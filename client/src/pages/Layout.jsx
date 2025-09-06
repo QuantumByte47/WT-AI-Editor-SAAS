@@ -17,7 +17,7 @@ const Layout = () => {
         className="text-xl sm:text-2xl font-bold cursor-pointer text-primary"
         onClick={() => navigate("/")}
       >
-        NovaCraft-AI
+        WT AI Editor
       </h1>
         {sidebar ? (
           <X

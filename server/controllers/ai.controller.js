@@ -18,10 +18,10 @@ export const generateArticle = async (req, res) => {
     const plan = req.plan;
     const free_usage = req.free_usage;
 
-    if (plan !== "premium" && free_usage >= 10) {
+    if (plan !== "premium" && free_usage >= 50) {
       return res.status(429).json({
         success: false,
-        message: "Limit reached. Upgrade to continue.",
+        message: "Daily limit reached (50 uses). Upgrade to premium for unlimited access.",
       });
     }
 
@@ -62,10 +62,10 @@ export const generateBlogTitle = async (req, res) => {
     const plan = req.plan;
     const free_usage = req.free_usage;
 
-    if (plan !== "premium" && free_usage >= 10) {
+    if (plan !== "premium" && free_usage >= 50) {
       return res.status(429).json({
         success: false,
-        message: "Limit reached. Upgrade to continue.",
+        message: "Daily limit reached (50 uses). Upgrade to premium for unlimited access.",
       });
     }
 

@@ -26,11 +26,19 @@ const WriteArticle = () => {
     try {
       setLoading(true);
       const prompt = `Write an article about ${input} in ${selectedLength.text}`;
+      
+      console.log("Making API request to:", `${import.meta.env.VITE_BASE_URL}/api/v1/ai/generate-article`);
+      console.log("Request payload:", { prompt, length: selectedLength.length });
+      
+      const token = await getToken();
+      console.log("Auth token exists:", !!token);
+      console.log("Auth token length:", token?.length || 0);
 
       const { data } = await axios.post(
         "/api/v1/ai/generate-article",
         { prompt, length: selectedLength.length },
-        { headers: { Authorization: `Bearer ${await getToken()}` } }
+        // Temporarily remove auth header for testing
+        // { headers: { Authorization: `Bearer ${token}` } }
       );
 
       if (data?.success) {
@@ -39,7 +47,26 @@ const WriteArticle = () => {
         toast.error(data?.message);
       }
     } catch (error) {
-      toast.error(error.message);
+      console.error("Full API Error:", error);
+      console.error("Error response:", error.response);
+      console.error("Error request:", error.request);
+      console.error("Error message:", error.message);
+      
+      let errorMsg = "Unknown error occurred";
+      
+      if (error.response) {
+        // API responded with error status
+        errorMsg = `Server Error ${error.response.status}: ${error.response.data?.message || 'Server error'}`;
+      } else if (error.request) {
+        // Network error - request was made but no response
+        errorMsg = "Cannot connect to server. Check if server is running on port 3000";
+      } else if (error.message) {
+        // Other error
+        errorMsg = `Request Error: ${error.message}`;
+      }
+      
+      toast.error(errorMsg);
+      console.log("Displaying error:", errorMsg);
     } finally {
       setLoading(false);
     }
